@@ -9,7 +9,7 @@ public class TriggerIncreaseHeight : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // // Scale up the player height while maintaining X and Z scales
+             // Scale up the player height while maintaining X and Z scales
             _transformPlayerIncreaseHeight.localScale = new Vector3(_transformPlayerIncreaseHeight.localScale.x, _maxHeight, _transformPlayerIncreaseHeight.localScale.z);
         }
     }
