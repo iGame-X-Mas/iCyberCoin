@@ -1,19 +1,17 @@
+using System;
 using UnityEngine;
 public class CoinBoundaries : MonoBehaviour
 { 
-    [SerializeField] private Transform _transformCoins;
-    [SerializeField] private float _destructionBoundariesCoins = -32f; 
-
-    private void Awake()
+    
+    
+    private void OnTriggerEnter(Collider other)
     {
-        _transformCoins ??= transform;  // If "_transformCoins" is not assigned (null), assign it the transform GameObject this script attached 
-    }
-
-    private void LateUpdate()
-    {
-        if (_transformCoins.position.z < _destructionBoundariesCoins) // Check if coins Z-position is less than the destruction boundary
+        if (other.CompareTag("Coin")) // Ensure coins have the "Coin" tag
         {
-            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
+
+   
 }
+
